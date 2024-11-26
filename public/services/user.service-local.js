@@ -13,7 +13,6 @@ export const userService = {
     getEmptyCredentials
 }
 
-
 function getById(userId) {
     return storageService.get(STORAGE_KEY, userId)
 }
@@ -33,7 +32,6 @@ function signup({ username, password, fullname }) {
     return storageService.post(STORAGE_KEY, user)
         .then(_setLoggedinUser)
 }
-
 
 function updateScore(diff) {
     const loggedInUserId = getLoggedinUser()._id
@@ -64,7 +62,6 @@ function _setLoggedinUser(user) {
     return userToSave
 }
 
-
 function getEmptyCredentials() {
     return {
         username: '',
@@ -73,10 +70,6 @@ function getEmptyCredentials() {
     }
 }
 
-
 // Test Data
 // userService.signup({username: 'bobo', password: 'bobo', fullname: 'Bobo McPopo'})
 // userService.login({username: 'bobo', password: 'bobo'})
-
-
-

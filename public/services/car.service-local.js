@@ -1,4 +1,3 @@
-
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
@@ -33,10 +32,8 @@ function getById(carId) {
 }
 
 function remove(carId) {
-    // return Promise.reject('Not now!')
     return storageService.remove(STORAGE_KEY, carId)
 }
-
 
 function save(car) {
     if (car._id) {
@@ -65,8 +62,3 @@ function getRandomCar() {
 function getDefaultFilter() {
     return { txt: '', maxPrice: '' }
 }
-
-// TEST DATA
-// storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 6', price: 980}).then(x => console.log(x))
-
-
