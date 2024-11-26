@@ -38,7 +38,6 @@ export function carReducer(state = initialState, action = {}) {
                 lastCars
             }
         case ADD_CAR:
-
             return {
                 ...state,
                 cars: [...state.cars, action.car]
@@ -63,7 +62,6 @@ export function carReducer(state = initialState, action = {}) {
             const shoppingCart = state.shoppingCart.filter(car => car._id !== action.carId)
             return { ...state, shoppingCart }
 
-
         case CLEAR_CART:
             return { ...state, shoppingCart: [] }
 
@@ -83,7 +81,6 @@ export function carReducer(state = initialState, action = {}) {
                 ...state,
                 cars: [...state.lastCars]
             }
-
 
         default:
             return state

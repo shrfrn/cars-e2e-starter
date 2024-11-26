@@ -38,8 +38,5 @@ export function App() {
                 </section>
             </Router>
         </Provider>
-
     )
 }
-
-

@@ -5,11 +5,9 @@ export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 export const CHANGE_BY = 'CHANGE_BY'
 
-
 //* User
 export const SET_USER = 'SET_USER'
 export const SET_USER_SCORE = 'SET_USER_SCORE'
-
 
 const initialState = {
     count: 105,
@@ -25,7 +23,6 @@ export function userReducer(state = initialState, action = {}) {
             return { ...state, count: state.count - 1 }
         case CHANGE_BY:
             return { ...state, count: state.count + action.diff }
-
 
         //* User
         case SET_USER:
