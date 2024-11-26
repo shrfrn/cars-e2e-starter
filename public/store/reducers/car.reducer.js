@@ -1,4 +1,4 @@
-import { carService } from "../../services/car.service.js"
+import { carService } from "../../services/car.service.local.js"
 
 //* Cars
 export const SET_CARS = 'SET_CARS'

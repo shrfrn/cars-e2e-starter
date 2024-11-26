@@ -1,4 +1,4 @@
-import { userService } from "../../services/user.service.js"
+import { userService } from "../../services/user.service.local.js"
 
 //* Count
 export const INCREMENT = 'INCREMENT'

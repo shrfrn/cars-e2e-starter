@@ -1,4 +1,4 @@
-import { carService } from '../../services/car.service.js'
+import { carService } from '../../services/car.service.local.js'
 import { showSuccessMsg } from '../../services/event-bus.service.js'
 import { ADD_CAR, CAR_UNDO, REMOVE_CAR, SET_CARS, SET_FILTER_BY, SET_IS_LOADING, UPDATE_CAR } from '../reducers/car.reducer.js'
 import { store } from '../store.js'

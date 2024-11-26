@@ -1,6 +1,6 @@
 const { useState } = React
 
-import { userService } from "../services/user.service.js"
+import { userService } from "../services/user.service.local.js"
 
 export function LoginForm({ onLogin, isSignup }) {
 
