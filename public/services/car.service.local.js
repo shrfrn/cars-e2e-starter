@@ -4,6 +4,8 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'carDB'
 
+_createCars()
+
 export const carService = {
     query,
     getById,
@@ -21,8 +23,13 @@ function query(filterBy = {}) {
             if (!filterBy.maxPrice) filterBy.maxPrice = Infinity
             const regExp = new RegExp(filterBy.txt, 'i')
             return cars.filter(car =>
-                regExp.test(car.vendor) &&
+            {
+                console.log(car.vendor, regExp.test(car.vendor))
+                console.log(car.price, car.price <= filterBy.maxPrice)
+                return regExp.test(car.vendor) &&
                 car.price <= filterBy.maxPrice
+
+            }
             )
         })
 }
@@ -49,6 +56,7 @@ function getEmptyCar() {
     return {
         vendor: '',
         price: '',
+        speed: '',
     }
 }
 
@@ -56,9 +64,23 @@ function getRandomCar() {
     return {
         vendor: 'Susita-' + (Date.now() % 1000),
         price: utilService.getRandomIntInclusive(1000, 9000),
+        speed: utilService.getRandomIntInclusive(50, 150),
     }
 }
 
 function getDefaultFilter() {
     return { txt: '', maxPrice: '' }
+}
+
+function _createCars() {
+    var cars = utilService.loadFromStorage(STORAGE_KEY)
+    if (cars && cars.length > 0) return
+
+    cars = []
+    for(var i = 0; i < 12; i++){
+        const car = getRandomCar()
+        car._id = utilService.makeId()
+        cars.push(car)
+    }
+    utilService.saveToStorage(STORAGE_KEY, cars)
 }
