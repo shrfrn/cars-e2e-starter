@@ -2,7 +2,7 @@ const { useEffect } = React
 const { Link } = ReactRouterDOM
 const { useSelector, useDispatch } = ReactRedux
 
-import { carService } from '../services/car.service.js'
+import { carService } from '../services/car.service.local.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 
 import { ADD_CAR_TO_CART } from '../store/reducers/car.reducer.js'
